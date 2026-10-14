@@ -42,8 +42,6 @@ Smart plugs cluster into a few bands, and the differences are protocol and relia
 
 **What deserves automating.** The honest answer: lamps, a charging routine, a fan in summer, and energy monitoring. That is most of it. Beyond that, automating things you would have to walk over and switch on anyway saves nothing — a smart plug on the kettle is a novelty, because you still have to fill it and press the button. Buy plugs for the jobs you will genuinely stop doing, not for the idea of a smart home.
 
-> One honest note: I am writing this as a researched buying guide — the protocol, socket-fit and power advice here is what decides whether smart plugs work reliably, and that is what matters. Check the current model range before you buy.
-
 ## My shortlist
 
 Decide Wi-Fi or hub first, check the plug is slim enough for your socket, then look at what is available right now:

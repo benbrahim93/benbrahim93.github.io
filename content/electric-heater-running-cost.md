@@ -43,8 +43,6 @@ The running cost dwarfs the purchase price, so choose the type that suits your r
 - **Leaving it on high all night with no timer.** It's the most expensive way to use one.
 - **Believing a cheaper-to-run electric heater exists.** Between resistive heaters, there isn't one.
 
-> One honest note: this is a researched buying guide. The maths above is the whole game with electric heating, and it stays true whatever the current price of a unit of electricity happens to be — so always use the rate on your own bill.
-
 ## My shortlist
 
 Pick the type that matches your room, then compare controls before you compare looks:

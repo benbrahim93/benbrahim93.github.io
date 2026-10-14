@@ -43,8 +43,6 @@ What you don't lose by spending less is the music itself. Sound quality here is 
 - **Touch controls if you wear a hat six months a year.** Physical buttons are more reliable in cold weather.
 - **Buying on driver size.** A bigger number doesn't mean better sound. Seal does.
 
-> One honest note: this is a buying guide, not a lab test. What's here is the thinking that decides whether cheap earbuds work for you, and it holds true whichever model is on the shelf this month.
-
 ## My shortlist
 
 Start from the two things that matter — fit and in-bud battery — and look at what's actually available now:

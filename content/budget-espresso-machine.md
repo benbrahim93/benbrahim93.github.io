@@ -41,8 +41,6 @@ Price bands, plainly:
 - **Ignoring your water.** In a hard-water area, scale kills machines. If you will not descale and backflush, and would rather not filter your water, buy something simpler.
 - **Paying for chrome.** Shiny cases do not make coffee. Spend on temperature control and the wand.
 
-> One honest note: I am writing this as a researched buying guide — the grinder-first logic and the feature advice here are what decide whether you keep making espresso, and that is what matters. Check the current model range before you buy.
-
 ## My shortlist
 
 Start from the grinder-first split above, then look at what is actually available right now:

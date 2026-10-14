@@ -46,8 +46,6 @@ Prices move constantly, so treat those bands as guides rather than gospel. What 
 - **Ignoring clearance.** It has to fit under your sofa and bed, or the dust under there stays put.
 - **Pet hair on the cheapest hardware.** It's the fastest way to clog a brush and wear out a cheap motor.
 
-> One honest note: this is a researched buying guide, not a hands-on test. Navigation and brush design are what decide whether a robot vacuum earns its floor space, and those are the things worth checking first.
-
 ## My shortlist
 
 Start from navigation, then filter by price. These searches cut to what's actually worth looking at:
