@@ -40,8 +40,6 @@ What you're *not* getting by spending more: meaningfully healthier food. All air
 - **"Air fryer ovens" if you want speed.** The flip-door oven styles are versatile but they preheat and cook more like a small oven, which is the thing you were trying to escape.
 - **Trusting "serves 4" marketing.** It usually means four chicken wings.
 
-> One honest note: I'm writing this as a researched buying guide — the sizing logic and feature advice here is what determines whether an air fryer gets used or abandoned, and that's what matters. Check the current model range before you decide.
-
 ## My shortlist
 
 Rather than push one model that'll be discontinued by the time you read this, start from the capacity you calculated above and look at what's actually available right now:

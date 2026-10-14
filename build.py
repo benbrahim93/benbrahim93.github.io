@@ -213,6 +213,10 @@ def build():
   <h1>Buying guides</h1>
   <p style="color:var(--mut);max-width:600px">No hype, no spec-sheet theatre. What actually
   matters, roughly what it should cost, and the mistakes that waste your money.</p>
+  <div class="callout" style="max-width:640px;margin-top:24px"><strong>How I write these:</strong>
+  each guide is researched properly and written to stay useful for years. Nothing here is a paid
+  placement and no brand gets a better write-up for it. Where a link earns me a commission, the
+  page says so at the top.</div>
   <div class="grid">{cards}</div>
 </main>
 {FOOT}

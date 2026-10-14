@@ -41,8 +41,6 @@ Every power bank is sold on the same number: the milliamp-hours printed in big t
 - **"Fast charge" with no protocol named.** It means nothing specific.
 - **Huge capacity for a handbag.** A 20,000mAh bank weighs roughly as much as a small paperback and gets left at home.
 
-> One honest note: this is a researched guide, not a test bench. The two-thirds rule, the watt-hours arithmetic and the cabin limits are the parts that stay true whatever brand is on the shelf.
-
 ## My shortlist
 
 Work out your watt-hours first, then buy the smallest bank that covers your longest day:

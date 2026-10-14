@@ -42,8 +42,6 @@ A £30 well-shaped mouse beats a £90 gamer mouse for writing and spreadsheets e
 - **Gamer styling over comfort.** Aggressive shapes and loud looks often compromise the very shape that made them comfortable.
 - **Ignoring your hand size.** Check the mouse suits your hand before buying. Length and grip matter more than anything printed on the box.
 
-> One honest note: I am writing this as a researched buying guide — the feel, layout and shape advice here is what decides whether you are comfortable all day, and that is what matters. Check the current model range before you buy.
-
 ## My shortlist
 
 Pick your switch feel and layout first, then look at what is available right now:

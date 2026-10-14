@@ -47,8 +47,6 @@ What you're *not* getting by spending more: a brighter lamp. Past a point, brigh
 - **Low-CRI cheap LEDs.** They make fine detail and text harder to read than they need to be.
 - **Non-dimmable lamps as your main light.** One flat brightness is wrong half the day.
 
-> One honest note: I'm writing this as a researched buying guide — the contrast, colour-temperature and flicker points are what decide whether a setup keeps your eyes comfortable. Check the current product range before you decide.
-
 ## My shortlist
 
 Rather than push one model that'll be discontinued by the time you read this, start from the dimming range, colour temperature and CRI you settled on above and look at what's available:

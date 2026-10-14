@@ -47,8 +47,6 @@ What you're *not* getting by spending more: a healthier back on its own. A stand
 - **Buying the top as an afterthought.** A hollow or too-thin worktop adds nothing to stability. It's ballast as much as a surface.
 - **Ignoring the motor warranty.** The frame rarely fails; the motor and control box do. A clear, long warranty on the electrics is worth more than a fancier control panel.
 
-> One honest note: I'm writing this as a researched buying guide — the stability logic here is what decides whether a standing desk gets used or ends up stuck at one height. Check the current model range before you decide.
-
 ## My shortlist
 
 Rather than push one model that'll be discontinued by the time you read this, start from the frame quality and desk width you settled on above and look at what's available right now:
