@@ -137,7 +137,8 @@ def nav():
             '<a href="/#work">Work with me</a><a href="/#links">Links</a>'
             '<a href="/#picks">Picks</a></div></div></nav>')
 
-FOOT = ('<footer><div>© %d %s. Written and researched by hand.</div>'
+FOOT = ('<footer><div>© %d %s. Written and researched by hand. '
+        '<a href="/privacy.html">Privacy &amp; affiliate disclosure</a></div>'
         '<div class="note">As an Amazon Associate I earn from qualifying purchases. '
         'Links marked ↗ are affiliate links — they cost you nothing extra.</div></footer>'
         % (datetime.date.today().year, AUTHOR))
