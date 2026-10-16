@@ -133,7 +133,8 @@ transition:.18s;display:block;color:var(--txt)}
 
 def nav():
     return ('<nav><div class="w"><a class="brand" href="/">Brahim<span>.</span></a>'
-            '<div class="navlinks"><a href="/blog.html">Guides</a>'
+            '<div class="navlinks"><a href="/blog.html">Guides</a><a href="/winter.html">Winter</a>'
+            '<a href="/october.html">This month</a>'
             '<a href="/#work">Work with me</a><a href="/#links">Links</a>'
             '<a href="/#picks">Picks</a></div></div></nav>')
 
@@ -158,6 +159,90 @@ def head(title, desc, canonical):
 </head>
 <body>
 {nav()}"""
+
+# ───────────────────────────── hubs (seasonal clusters) ─────────────────────────────
+HUBS = [
+    dict(file="winter.html",
+         title="Get winter-ready without wasting money",
+         lead="Every winter guide in one place: fix the free things first, seal the cheap things second, then buy the right machine once.",
+         cards=[
+             ("Heated clothes airers vs tumble dryers", "The honest watts x hours comparison, and the loads where each one wins.", "heated-clothes-airer-dryer"),
+             ("Dehumidifiers: compressor or desiccant", "Which type suits your room, and why the £50–£120 band is usually the smart money.", "dehumidifier-choice"),
+             ("Condensation on windows: the fix ladder", "Free fixes first, absorbers for corners, a machine for the real problem.", "condensation-fix"),
+             ("Draught-proofing: what pays for itself", "Letterbox to chimney: the payback ladder, and where it's just tape.", "draught-proofing"),
+             ("Electric heaters that are cheap to run", "The maths behind 'cheap to run', and what actually controls the cost.", "electric-heater-running-cost"),
+             ("The energy-saving upgrade kit", "LED bulbs, timer sockets and monitoring plugs — sorted from the gimmicks.", "energy-saving-plugs-upgrades"),
+         ],
+         btns=["heated clothes airer", "dehumidifier desiccant", "draught excluder tape"],
+         note="Order matters more than brand: free fixes, then cheap fixes, then the right machine."),
+    dict(file="october.html",
+         title="October: what's worth buying right now",
+         lead="The mid-October honest list. What makes sense this month, what to wait for, and what to skip.",
+         cards=[
+             ("Fix the free stuff first", "Ventilation and drying habits before anybody spends a pound.", "condensation-fix"),
+             ("Seal the gaps before the cold lands", "Draught-proofing pays back quickest in October, not January.", "draught-proofing"),
+             ("Dry laundry without the tumble dryer", "Heated airers: cheaper now than when the December rush bites.", "heated-clothes-airer-dryer"),
+             ("Beat the damp before it beats you", "Dehumidifiers: buy before the condensation weeks arrive.", "dehumidifier-choice"),
+             ("Warmer nights, small spend", "A mattress topper is the cheapest comfort win of the season.", "mattress-topper-guide"),
+             ("Cuts bills without a sales pitch", "The boring, reliable energy upgrades — and the gimmicks to skip.", "energy-saving-plugs-upgrades"),
+         ],
+         btns=["heated clothes airer", "dehumidifier desiccant", "draught excluder tape", "led bulbs energy saving"],
+         note="Electronics can wait for Black Friday in late November. Heating prep doesn't wait for anything."),
+    dict(file="kitchen.html",
+         title="The kitchen, without the marketing",
+         lead="Small appliances are where most household money is wasted. These guides slow that down.",
+         cards=[
+             ("Air fryers: what size you actually need", "Litres per person, dual baskets, and the capacity trap.", "air-fryer-size-guide"),
+             ("Espresso machines under £200", "Why the grinder comes first, and where the money should go.", "budget-espresso-machine"),
+             ("Smart plugs: get them working first try", "Protocols, sockets and what never to plug into one.", "smart-plugs-alexa-uk"),
+         ],
+         btns=["air fryer dual basket", "espresso machine and grinder", "fast boil kettle"],
+         note=None),
+    dict(file="home-office.html",
+         title="Home office: buy it once, properly",
+         lead="The room you work in eight hours a day. Spend where your back notices, not where the marketing shouts.",
+         cards=[
+             ("Standing desks that don't wobble", "Why stability is the whole product, and what causes wobble.", "home-office-standing-desk"),
+             ("Office chairs: what your back needs", "The five adjustments that matter, and the price band where they exist.", "office-chair-guide"),
+             ("Home office lighting", "Why your screen is fine and your room isn't.", "desk-lamps-home-office"),
+             ("Keyboards and mice", "Stop paying for specs you can't feel.", "mechanical-keyboard-mouse"),
+         ],
+         btns=["standing desk frame", "ergonomic office chair", "desk lamp home office"],
+         note=None),
+]
+
+def shopbtn(query):
+    return (f'<a class="btn p" href="{aff_link(query)}" target="_blank" rel="noopener sponsored">'
+            f'See {html.escape(query)} ↗</a>')
+
+def build_hubs():
+    names = []
+    for h in HUBS:
+        cards = "\n".join(
+            f'<a class="card" href="/posts/{slug}.html"><h3>{html.escape(t)}</h3>'
+            f'<p>{html.escape(d)}</p><span class="rt">Read the guide →</span></a>'
+            for (t, d, slug) in h["cards"])
+        btns = "\n".join(shopbtn(q) for q in h["btns"])
+        note = f'<div class="callout">{html.escape(h["note"])}</div>' if h.get("note") else ""
+        page = (head(h["title"] + " | " + AUTHOR, h["lead"], f"{SITE}/{h['file']}")
+                + f"""
+<main class="wide">
+  <div class="crumb"><a href="/">Home</a> › <a href="/blog.html">Guides</a> › {html.escape(h["title"])}</div>
+  <h1>{html.escape(h["title"])}</h1>
+  <p style="color:var(--mut);max-width:640px">{html.escape(h["lead"])}</p>
+  {note}
+  <div class="grid">{cards}</div>
+  <div style="margin-top:38px">
+    <h2 style="font-size:22px;margin-bottom:4px">Go straight to Amazon</h2>
+    <p style="color:var(--mut);margin-bottom:14px">Tagged search links — no extra cost to you, they keep this site alive.</p>
+    {btns}
+  </div>
+</main>
+""" + FOOT + "\n</body>\n</html>")
+        open(os.path.join(ROOT, h["file"]), "w", encoding="utf-8").write(page)
+        names.append(h["file"])
+    print(f"built {len(names)} hub pages: " + ", ".join(names))
+    return names
 
 # ───────────────────────────── build ─────────────────────────────
 def build():
@@ -225,8 +310,9 @@ def build():
 </html>"""
     open(os.path.join(ROOT, "blog.html"), "w", encoding="utf-8").write(idx)
 
-    # sitemap + robots
-    urls = [SITE + "/", SITE + "/blog.html"] + [p["url"] for p in posts]
+    # cluster hub pages + sitemap + robots
+    hub_names = build_hubs()
+    urls = [SITE + "/", SITE + "/blog.html"] + [SITE + "/" + n for n in hub_names] + [p["url"] for p in posts]
     today = datetime.date.today().isoformat()
     sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
