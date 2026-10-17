@@ -45,7 +45,7 @@ What extra money doesn't buy is extraction: the litres-per-day figure is the sam
 Start from the rooms and the type you decided above, then look at what's available now:
 
 - A concrete budget-end example, for orientation: [NETTA 12L Dehumidifier](https://www.amazon.co.uk/dp/B07F6DHHB1?tag=brahimpicks-21) — the listing states a 170W compressor unit, up to 12L/day extraction under test conditions, a 1.5L tank with a continuous-drain hose, an auto humidity sensor, a 24-hour timer, a washable filter, and a listed rating of 4.6 stars. Check the current price and the tank size against how often you want to empty it.
-{{LINK:dehumidifier compressor 12 litre}}
+- A mid-band step-up, for comparison: [Pro Breeze OmniDry 12L](https://www.amazon.co.uk/dp/B09BNZWPZY?tag=brahimpicks-21) — the listing states a 2L tank, a digital humidity display with an automatic sensor, quiet compressor technology, a 24-hour timer, laundry drying and continuous drainage, listed at 4.6 stars. The step-up from budget is mostly tank size, the display and noise — weigh that against the price gap, not against marketing.
 
 {{LINK:desiccant dehumidifier 8 litre}}
 
