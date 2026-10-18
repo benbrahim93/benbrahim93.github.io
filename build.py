@@ -134,7 +134,7 @@ transition:.18s;display:block;color:var(--txt)}
 def nav():
     return ('<nav><div class="w"><a class="brand" href="/">Brahim<span>.</span></a>'
             '<div class="navlinks"><a href="/blog.html">Guides</a><a href="/winter.html">Winter</a>'
-            '<a href="/october.html">This month</a>'
+            '<a href="/october.html">This month</a><a href="/about.html">About</a>'
             '<a href="/#work">Work with me</a><a href="/#links">Links</a>'
             '<a href="/#picks">Picks</a></div></div></nav>')
 
@@ -312,7 +312,7 @@ def build():
 
     # cluster hub pages + sitemap + robots
     hub_names = build_hubs()
-    urls = [SITE + "/", SITE + "/blog.html"] + [SITE + "/" + n for n in hub_names] + [p["url"] for p in posts]
+    urls = [SITE + "/", SITE + "/blog.html", SITE + "/about.html"] + [SITE + "/" + n for n in hub_names] + [p["url"] for p in posts]
     today = datetime.date.today().isoformat()
     sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
