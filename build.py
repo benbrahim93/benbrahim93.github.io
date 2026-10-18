@@ -72,77 +72,42 @@ def front_matter(text):
     return meta, body
 
 # ───────────────────────────── page shells ─────────────────────────────
-CSS = """
-:root{--bg:#0b0f17;--panel:#131a26;--panel2:#182130;--line:#243044;--txt:#e8eef8;
---mut:#93a3bb;--acc:#2ee6a8;--acc2:#7c6cff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--txt);line-height:1.7;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
--webkit-font-smoothing:antialiased}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(11,15,23,.85);
-border-bottom:1px solid var(--line)}
-nav .w{max-width:960px;margin:0 auto;padding:0 20px;height:58px;display:flex;
-align-items:center;justify-content:space-between}
-.brand{font-weight:700;letter-spacing:-.02em;color:var(--txt)}
-.brand span{color:var(--acc)}
-.navlinks{display:flex;gap:20px;font-size:14px;color:var(--mut)}
-.navlinks a{color:var(--mut)}
-.navlinks a:hover{color:var(--txt);text-decoration:none}
-@media(max-width:640px){.navlinks{display:none}}
-main{max-width:720px;margin:0 auto;padding:52px 20px 40px}
-.crumb{font-size:13px;color:var(--mut);margin-bottom:22px}
-h1{font-size:clamp(28px,5.4vw,40px);line-height:1.14;letter-spacing:-.03em;font-weight:800;
-margin-bottom:14px}
-.meta{color:var(--mut);font-size:13.5px;padding-bottom:22px;border-bottom:1px solid var(--line);
-margin-bottom:30px}
-.disc{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
-border-radius:8px;padding:14px 16px;font-size:13.5px;color:var(--mut);margin:0 0 30px}
-article p{color:#d3dcea;margin:0 0 20px;font-size:16.5px}
-article h2{font-size:clamp(21px,3.4vw,25px);letter-spacing:-.02em;font-weight:750;
-margin:38px 0 14px}
-article h3{font-size:18px;margin:26px 0 10px;font-weight:700}
-article ul,article ol{margin:0 0 20px 22px;color:#d3dcea}
-article li{margin-bottom:9px}
-article strong{color:#fff}
-article a{text-decoration:underline}
-.callout{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-padding:16px 18px;color:#cfd9e8;font-size:15.5px;margin:0 0 22px}
-.btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600;font-size:14.5px;
-margin:2px 0 22px;border:1px solid var(--line)}
-.btn:hover{text-decoration:none;transform:translateY(-2px)}
-.btn.p{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#08111a;border:none}
-.rel{margin-top:46px;padding-top:26px;border-top:1px solid var(--line)}
-.rel h2{font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);
-margin-bottom:16px}
-.rel a{display:block;padding:13px 16px;border:1px solid var(--line);border-radius:10px;
-margin-bottom:9px;color:var(--txt);background:var(--panel)}
-.rel a:hover{background:var(--panel2);text-decoration:none}
-footer{max-width:720px;margin:0 auto;padding:30px 20px 70px;color:var(--mut);font-size:13px;
-border-top:1px solid var(--line)}
-.note{margin-top:10px;color:#6b7c94;font-size:12.5px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:30px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;
-transition:.18s;display:block;color:var(--txt)}
-.card:hover{border-color:#31435e;transform:translateY(-3px);text-decoration:none;background:var(--panel2)}
-.card h3{font-size:17px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--mut);font-size:14.5px}
-.card .rt{color:var(--acc);font-size:13px;font-weight:600;margin-top:14px;display:block}
-.wide{max-width:960px}
-"""
+# The design system (dark/light themes) lives in /assets/style.css - every page links it.
+
+
+SV_SUN = ('<svg class="ico-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" '
+'stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/>'
+'<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2'
+'M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>')
+SV_MOON = ('<svg class="ico-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" '
+'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>')
 
 def nav():
-    return ('<nav><div class="w"><a class="brand" href="/">Brahim<span>.</span></a>'
-            '<div class="navlinks"><a href="/blog.html">Guides</a><a href="/winter.html">Winter</a>'
-            '<a href="/october.html">This month</a><a href="/about.html">About</a>'
-            '<a href="/#work">Work with me</a><a href="/#links">Links</a>'
-            '<a href="/#picks">Picks</a></div></div></nav>')
-
+    links = ('<a href="/blog.html">Guides</a><a href="/winter.html">Winter</a>'
+'<a href="/october.html">This month</a><a href="/about.html">About</a>'
+'<a href="/#picks">Picks</a>'
+'<a href="/#work">Work with me</a><a href="/#links">Links</a>')
+    return (f'<nav class="site-nav" id="siteNav"><div class="w">'
+'<a class="brand" href="/">Brahim<span>.</span></a>'
+f'<div class="navlinks">{links}</div>'
+'<div class="nav-cta">'
+f'<button class="theme-btn" id="themeToggle" type="button" '
+f'aria-label="Toggle light or dark theme">{SV_SUN}{SV_MOON}</button>'
+f'<button class="burger" id="burger" type="button" aria-label="Open menu" '
+f'aria-expanded="false"><span></span><span></span></button>'
+'</div></div>'
+f'<div class="mobile-menu" id="mobileMenu">{links}</div></nav>')
 FOOT = ('<footer><div>© %d %s. Written and researched by hand. '
         '<a href="/privacy.html">Privacy &amp; affiliate disclosure</a></div>'
         '<div class="note">As an Amazon Associate I earn from qualifying purchases. '
         'Links marked ↗ are affiliate links — they cost you nothing extra.</div></footer>'
         % (datetime.date.today().year, AUTHOR))
+
+THEME_INIT = ('<script>(function(){var d=document.documentElement;var t=null;'
+              'try{t=localStorage.getItem("theme")}catch(e){}'
+              'if(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)")'
+              '.matches)t="light";d.dataset.theme=t||"dark"})();</script>')
 
 def head(title, desc, canonical):
     return f"""<!DOCTYPE html>
@@ -152,10 +117,21 @@ def head(title, desc, canonical):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
-<meta name="theme-color" content="#0b0f17">
-<link rel="canonical" href="{canonical}">
+<meta name="theme-color" content="#05070c">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{html.escape(canonical)}">
+<meta property="og:site_name" content="{html.escape(AUTHOR)}">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="{html.escape(canonical)}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-<style>{CSS}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
+{THEME_INIT}
 </head>
 <body>
 {nav()}"""
@@ -219,7 +195,7 @@ def build_hubs():
     names = []
     for h in HUBS:
         cards = "\n".join(
-            f'<a class="card" href="/posts/{slug}.html"><h3>{html.escape(t)}</h3>'
+            f'<a class="card reveal" href="/posts/{slug}.html"><h3>{html.escape(t)}</h3>'
             f'<p>{html.escape(d)}</p><span class="rt">Read the guide →</span></a>'
             for (t, d, slug) in h["cards"])
         btns = "\n".join(shopbtn(q) for q in h["btns"])
@@ -232,10 +208,12 @@ def build_hubs():
   <p style="color:var(--mut);max-width:640px">{html.escape(h["lead"])}</p>
   {note}
   <div class="grid">{cards}</div>
-  <div style="margin-top:38px">
-    <h2 style="font-size:22px;margin-bottom:4px">Go straight to Amazon</h2>
-    <p style="color:var(--mut);margin-bottom:14px">Tagged search links — no extra cost to you, they keep this site alive.</p>
+  <div class="shop">
+    <h2>Go straight to Amazon</h2>
+    <p>Tagged search links — no extra cost to you, they keep this site alive.</p>
+    <div class="btns">
     {btns}
+    </div>
   </div>
 </main>
 """ + FOOT + "\n</body>\n</html>")
@@ -289,7 +267,7 @@ def build():
 
     # index of guides
     cards = "\n".join(
-        f'<a class="card" href="/posts/{p["slug"]}.html"><h3>{html.escape(p["title"])}</h3>'
+        f'<a class="card reveal" href="/posts/{p["slug"]}.html"><h3>{html.escape(p["title"])}</h3>'
         f'<p>{html.escape(p["desc"])}</p><span class="rt">{p["rt"]} read →</span></a>'
         for p in posts)
     idx = f"""{head("Guides — honest buying advice | " + AUTHOR,
@@ -299,6 +277,12 @@ def build():
   <h1>Buying guides</h1>
   <p style="color:var(--mut);max-width:600px">No hype, no spec-sheet theatre. What actually
   matters, roughly what it should cost, and the mistakes that waste your money.</p>
+  <div class="chips">
+    <a class="chip" href="/winter.html">❄️ Winter</a>
+    <a class="chip" href="/october.html">🗓️ This month</a>
+    <a class="chip" href="/kitchen.html">🍳 Kitchen</a>
+    <a class="chip" href="/home-office.html">💻 Home office</a>
+  </div>
   <div class="callout" style="max-width:640px;margin-top:24px"><strong>How I write these:</strong>
   each guide is researched properly and written to stay useful for years. Nothing here is a paid
   placement and no brand gets a better write-up for it. Where a link earns me a commission, the
