@@ -146,7 +146,7 @@
     </div>
   </div>
   <div class="cta">
-    <a class="btn p" id="mailBtn" href="mailto:">Tell me what you need</a>
+    <a class="btn p" href="https://www.tiktok.com/@bslshopx" target="_blank" rel="noopener">Message me on TikTok</a>
   </div>
 </div></section>
 
@@ -171,7 +171,7 @@ const LINKS = {
   coinbase: "",                    // e.g. https://coinbase.com/join/XXXXXX
   binance:  "",                    // e.g. https://www.binance.com/en/register?ref=XXXXXX
   tiktok:   "https://www.tiktok.com/@bslshopx", // BSL SHOPS — live handle
-  email:    "contact via tiktok"
+  email:    ""                                  // not published - contact via TikTok
 };
 
 const ROWS = [
@@ -202,8 +202,6 @@ ROWS.forEach(r => {
 });
 
 /* contact + year */
-document.getElementById("mailBtn").href = "mailto:" + LINKS.email +
-  "?subject=" + encodeURIComponent("Website enquiry");
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
